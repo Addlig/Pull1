@@ -165,10 +165,19 @@ public class BaseSteps {
         return homePage.selectTabText();
     }
 
+    @Step(" доступно")
+    public void tabMarketEnabled() {
+        assertTrue(" не доступно", homePage.tabMarketEnabled());
+    }
+
+    @Step("Взять Текст Таб")
+    public String MarketTabText() {
+        return homePage.tabMarketTabText();
+    }
+
     @Step("Проверка страницы")
     public void EqualsSelectTab(String tabSelect, String nav) {
-        assertEquals("Что-то пошло не так ", tabSelect, nav);
-
+        assertTrue(tabSelect.contains(nav));
     }
 
     @Step("images доступно")
@@ -201,14 +210,19 @@ public class BaseSteps {
         homePage.newsClick();
     }
 
+    @Step(" доступно")
+    public void tabNewsEnabled() {
+        assertTrue(" не доступно", homePage.tabNewsEnabled());
+    }
+
     @Step("maps доступно")
     public void mapsEnabled() {
         assertTrue("maps не доступно", homePage.mapsEnabled());
     }
 
-    @Step("Взять Текст maps")
-    public String mapsText() {
-        return homePage.mapsText();
+    @Step("maps доступно")
+    public void mapsButtonEnabled() {
+        assertTrue("maps не доступно", homePage.mapsButtonEnabled());
     }
 
     @Step("Нажать maps")
@@ -246,19 +260,84 @@ public class BaseSteps {
         homePage.translateClick();
     }
 
+    @Step("translate доступно")
+    public void tabTranslateEnabled() {
+        assertTrue("translate не доступно", homePage.tabTranslateEnabled());
+    }
+
+    @Step("Взять Текст translate")
+    public String tabTranslateText() {
+        return homePage.tabTranslateText();
+    }
+
     @Step("music доступно")
     public void musicEnabled() {
         assertTrue("music не доступно", homePage.musicEnabled());
     }
 
-    @Step("Взять Текст music")
-    public String musicText() {
-        return homePage.musicText();
-    }
-
     @Step("Нажать music")
     public void musicClick() {
         homePage.musicClick();
+    }
+
+    @Step("music доступно")
+    public void musicPageEnabled() {
+        assertTrue("music не доступно", homePage.musicPageEnabled());
+    }
+
+    @Step("language доступно")
+    public void languageEnabled() {
+        assertTrue("market не доступно", homePage.languageEnabled());
+    }
+
+    @Step("Взять Текст language")
+    public String languageText() {
+        return homePage.languageText();
+    }
+
+    @Step("Нажать language")
+    public void languageClick() {
+        homePage.languageClick();
+    }
+
+    @Step("market доступно")
+    public void yetEnabled() {
+        assertTrue("market не доступно", homePage.yetEnabled());
+    }
+
+    @Step("Нажать language")
+    public void yetClick() {
+        homePage.yetClick();
+    }
+
+    @Step("market доступно")
+    public void buttonLanguageEnabled() {
+        assertTrue("market не доступно", homePage.buttonLanguageEnabled());
+    }
+
+    @Step("Нажать language")
+    public void buttonLanguageClick() {
+        homePage.buttonLanguageClick();
+    }
+
+    @Step("Нажать english")
+    public void englishClick() {
+        homePage.englishClick();
+    }
+
+    @Step("market доступно")
+    public void saveEnabled() {
+        assertTrue("market не доступно", homePage.saveEnabled());
+    }
+
+    @Step("Нажать save")
+    public void saveClick() {
+        homePage.saveClick();
+    }
+
+    @Step("Проверка Неверный пароль")
+    public void EqualsLanguage(String lang1, String lang2) {
+        assertEquals("Что-то пошло не так ", lang1, lang2);
     }
 }
 

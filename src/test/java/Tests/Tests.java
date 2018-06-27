@@ -121,44 +121,52 @@ public class Tests {
         homeSteps.back();
 
         homeSteps.newsEnabled();
-        nav = homeSteps.newsText();
         homeSteps.newsClick();
-        homeSteps.selectTabEnabled();
-        tabSelect = homeSteps.TextTab();
-        homeSteps.EqualsSelectTab(tabSelect, nav);
-        homeSteps.back();
-
-        homeSteps.mapsEnabled();
-        nav = homeSteps.mapsText();
-        homeSteps.mapsClick();
-        homeSteps.selectTabEnabled();
-        tabSelect = homeSteps.TextTab();
-        homeSteps.EqualsSelectTab(tabSelect, nav);
+        homeSteps.tabNewsEnabled();
         homeSteps.back();
 
         homeSteps.marketEnabled();
         nav = homeSteps.marketText();
         homeSteps.marketClick();
-        homeSteps.selectTabEnabled();
-        tabSelect = homeSteps.TextTab();
+        homeSteps.tabMarketEnabled();
+        tabSelect = homeSteps.MarketTabText();
         homeSteps.EqualsSelectTab(tabSelect, nav);
+        homeSteps.back();
+
+        homeSteps.mapsEnabled();
+        homeSteps.mapsClick();
+        homeSteps.mapsButtonEnabled();
         homeSteps.back();
 
         homeSteps.translateEnabled();
         nav = homeSteps.translateText();
         homeSteps.translateClick();
-        homeSteps.selectTabEnabled();
-        tabSelect = homeSteps.TextTab();
+        homeSteps.tabTranslateEnabled();
+        tabSelect = homeSteps.tabTranslateText();
         homeSteps.EqualsSelectTab(tabSelect, nav);
         homeSteps.back();
 
         homeSteps.musicEnabled();
-        nav = homeSteps.musicText();
         homeSteps.musicClick();
-        homeSteps.selectTabEnabled();
-        tabSelect = homeSteps.TextTab();
-        homeSteps.EqualsSelectTab(tabSelect, nav);
+        homeSteps.musicPageEnabled();
         BaseTest.closeDriver();
+    }
+
+    @Test
+    public void english() {
+        homeSteps.languageEnabled();
+        String lang1= homeSteps.languageText();
+        homeSteps.languageClick();
+        homeSteps.yetEnabled();
+        homeSteps.yetClick();
+        homeSteps.buttonLanguageEnabled();
+        homeSteps.buttonLanguageClick();
+        homeSteps.englishClick();
+        homeSteps.saveEnabled();
+        homeSteps.saveClick();
+        homeSteps.languageEnabled();
+        String lang2 = homeSteps.languageText();
+        homeSteps.EqualsSelectTab(lang1, lang2);
 
     }
 }
