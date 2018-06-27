@@ -29,8 +29,13 @@ public class BaseTest {
 
     public static void prepareDriver() {
         if (driver != null) {
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); // неявные ожидания
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // неявные ожидания
             driver.manage().window().maximize();
+        }
+    }
+    public static void navigationBack() {
+        if (driver != null) {
+            driver.navigate().back();
         }
     }
 
